@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+            jxb:version="2.0">
+
+<xsd:element name="Bugs" type="BugList" />
+
+<xsd:complexType name="BugList">
+	<xsd:sequence>
+		<xsd:element name="Bug" type="Bug" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="Bug">
+	<xsd:sequence>
+		<xsd:element name="id" type="xsd:int"/>
+		<xsd:element name="state" type="xsd:string"/>
+		<xsd:element name="summary" type="xsd:string"/>		
+		<xsd:element name="reporter" type="xsd:string"/>
+		<xsd:element name="owner" type="xsd:string"/>
+		<xsd:element name="votes" type="xsd:int"/>
+		<xsd:element name="confirmed" type="xsd:boolean"/>
+		<xsd:element name="resolution" type="xsd:string"/>
+		<xsd:element name="note_list" type="NoteList"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="NoteList">
+	<xsd:sequence>
+		<xsd:element name="note" type="xsd:string" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>
