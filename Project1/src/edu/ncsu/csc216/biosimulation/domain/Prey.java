@@ -93,6 +93,7 @@ public class Prey extends Species {
 		final double y = killer.getCount();
 		final double bxy = b * x * y;
 		final double tot = x + ax - bxy;
+		final double tota = tot + 1;
 		return putCountInRange(tot);
 	}
 
